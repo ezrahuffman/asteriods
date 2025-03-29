@@ -16,5 +16,5 @@ class CircleShape(pygame.sprite.Sprite):
         pass
 
     # abstract method
-    def update(self):
+    def update(self, dt):
         pass
