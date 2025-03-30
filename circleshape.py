@@ -1,3 +1,5 @@
+from pickletools import pytuple
+
 import pygame
 
 class CircleShape(pygame.sprite.Sprite):
@@ -18,3 +20,8 @@ class CircleShape(pygame.sprite.Sprite):
     # abstract method
     def update(self, dt):
         pass
+
+    def is_colliding(self, other):
+        d = pygame.Vector2.distance_to(self.position, other.position)
+        tot_radius = self.radius + other.radius
+        return d <= tot_radius
