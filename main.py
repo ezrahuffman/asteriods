@@ -44,7 +44,9 @@ def main():
 				raise SystemExit
 			for s in shots_group:
 				if s.is_colliding(asteroid):
-					print("hit asteroid!")
+					s.kill()
+					asteroid.split()
+					break
 
 		pygame.display.flip()
 		dt = clock.tick(60)/1000
